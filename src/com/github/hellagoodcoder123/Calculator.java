@@ -30,6 +30,7 @@ public final class Calculator {
     double a = 0;
     for(double val : values) a += val * val;
   }
+  // Unfinished
   public static double pow(double x, double y) {
     if(y == 0) return 1;
     if(y == 1) return x;
@@ -44,7 +45,7 @@ public final class Calculator {
       for(int i = 1; i < y; i++) a *= x;
       return a;
     }
-    return pow(x, floor(y)) * x * (y - floor(y));
+    return pow(x, floor(y)) * pow(x, floor(1 / (y - floor(y)))) * x * (1 / (y - floor(y)) - floor(1 / (y - floor(y))));
   }
   public static double sqrt(double x) {
     double t;
